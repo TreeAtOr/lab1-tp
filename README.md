@@ -4,7 +4,7 @@
 ## Installation
 ```bash
 git clone https://github.com/TreeAtOr/lab1-tp.git
-cd lab3
+cd lab1
 make all
 ```
 

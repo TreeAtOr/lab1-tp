@@ -3,7 +3,7 @@
 
 ## Installation
 ```bash
-git clone <url>
+git clone https://github.com/TreeAtOr/lab1-tp.git
 cd lab3
 make all
 ```

@@ -26,7 +26,7 @@ public:
 
     int getSize();
 
-    void push(int value);
+    void const push(int value);
     int pop();
     int at(const int index);
 

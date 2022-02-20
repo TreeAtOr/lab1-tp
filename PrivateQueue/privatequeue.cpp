@@ -37,6 +37,10 @@ int PrivateQueue::calc(){
     return ret;
 }
 
+queue_data PrivateQueue::wrappedCopy(){
+    return this->copy();
+}
+
 queue_data PrivateQueue::concat(PrivateQueue *a, PrivateQueue *b){
     queue_data ret;
     ret.size = a->getSize() + b->getSize();

@@ -16,6 +16,7 @@ public:
 
     void wrappedPrint();
 
+    queue_data wrappedCopy();
     static queue_data concat(ProtectedQueue* a, ProtectedQueue* b);
     int calc();
 };

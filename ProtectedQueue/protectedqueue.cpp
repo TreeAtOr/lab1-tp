@@ -37,6 +37,10 @@ int ProtectedQueue::calc(){
     return ret;
 }
 
+queue_data ProtectedQueue::wrappedCopy(){
+    return this->copy();
+}
+
 queue_data ProtectedQueue::concat(ProtectedQueue *a, ProtectedQueue *b){
     queue_data ret;
     ret.size = a->getSize() + b->getSize();

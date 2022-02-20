@@ -18,6 +18,7 @@ public:
 
     int calc();
 
+    queue_data wrappedCopy();
     static queue_data concat(PrivateQueue* a, PrivateQueue* b);
 };
 

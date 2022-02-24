@@ -1,3 +1,4 @@
+#include <cstddef>
 #include <iostream>
 #include <string>
 #include <limits>
@@ -65,10 +66,12 @@ int extended(){
                 queue = new PublicQueue(last->copy());
                 break;
             case 7:
-                temp = new PublicQueue(Queue::concat(last, queue));
-                delete last;
-                last = queue;
-                queue = temp;
+                if(last != NULL){
+                    temp = new PublicQueue(Queue::concat(last, queue));
+                    delete last;
+                    last = queue;
+                    queue = temp;
+                }
                 break;
             default:
                 help();
@@ -113,10 +116,12 @@ int wrapped(){
                 queue = new ProtectedQueue(last->wrappedCopy());
                 break;
             case 7:
-                temp = new ProtectedQueue(ProtectedQueue::concat(last, queue));
-                delete last;
-                last = queue;
-                queue = temp;
+                if(last != NULL){
+                    temp = new ProtectedQueue(ProtectedQueue::concat(last, queue));
+                    delete last;
+                    last = queue;
+                    queue = temp;
+                }
                 break;
             default:
                 help();
@@ -161,10 +166,12 @@ int privatizated(){
                 queue = new PrivateQueue(last->wrappedCopy());
                 break;
             case 7:
-                temp = new PrivateQueue(PrivateQueue::concat(last, queue));
-                delete last;
-                last = queue;
-                queue = temp;
+                if(last != NULL){
+                    temp = new PrivateQueue(PrivateQueue::concat(last, queue));
+                    delete last;
+                    last = queue;
+                    queue = temp;
+                }
                 break;
             default:
                 help();

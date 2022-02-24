@@ -44,10 +44,10 @@ queue_data PrivateQueue::wrappedCopy(){
 queue_data PrivateQueue::concat(PrivateQueue *a, PrivateQueue *b){
     queue_data ret;
     ret.size = a->getSize() + b->getSize();
-    ret.new_allocated_head = (int*)std::calloc(ret.size,sizeof(int));
+    ret.new_allocated_head = new int[ret.size];
 
-    std::memcpy(ret.new_allocated_head               , a->getQueueHead(), a->getSize());
-    std::memcpy(ret.new_allocated_head + a->getSize(), b->getQueueHead(), b->getSize());
+    std::copy(a->getQueueHead(), a->getQueueHead() + a->getSize(), ret.new_allocated_head);
+    std::copy(b->getQueueHead(), b->getQueueHead() + b->getSize(), ret.new_allocated_head + a->getSize());
 
     return ret;
 }

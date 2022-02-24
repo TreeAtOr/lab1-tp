@@ -23,7 +23,7 @@ int input(){
 void help(){
     cout << "0 - Add new number to queue"   << endl;
     cout << "1 - Pop a number from queue"   << endl;
-    cout << "2 - Calculate odd number"      << endl;
+    cout << "2 - Calculate even number"     << endl;
     cout << "3 - Print a queue"             << endl;
     cout << "4 - Quit the program"          << endl;
     cout << "5 - Create new queue"          << endl;

@@ -68,9 +68,15 @@ int Queue::pop(){
     }
     int tmp = this->getQueueHead()[0];
 
+    if(this->queue_size == 1){
+        delete[] this->queue_head;
+        this->decrementSize();
+        return tmp;
+    }
+
     const int* old = this->queue_head;
     int* new_allocated_head = new int[this->decrementSize()];
-    std::copy(old + 1, old + this->queue_size - 1, new_allocated_head);
+    std::copy(old + 1, old + this->queue_size + 1, new_allocated_head);
     delete[] old;
     this->setQueueHead(new_allocated_head);
 
